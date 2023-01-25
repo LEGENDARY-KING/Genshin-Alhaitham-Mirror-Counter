@@ -24,6 +24,7 @@ This is a Python project that counts the number of mirrors in the game Genshin I
 To make this tool always stay on top of Genshin Impact, you can use Microsoft PowerToys' Always On Top. Follow this guide on how to set it up: https://learn.microsoft.com/en-us/windows/powertoys
  
 ## Additional Information
+- You need to switch to alhaitham after the tool is started for registration to start
 - This tool does not use image recognition, so the results may not be 100% accurate and may include mirrors generated when the character does not have enough energy, or when charged or plunge attacks do not actually hit any enemies.
 - Known Bugs:
     1. If pressing the window of the exe after directly coming from game the system freezes for a bit, just click the button again and for future press on anything else before pressing the window navigation portion
