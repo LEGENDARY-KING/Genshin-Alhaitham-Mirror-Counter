@@ -28,10 +28,10 @@ skill_key = str.lower(config.get("Settings", "skill_key"))
 burst_key = str.lower(config.get("Settings", "burst_key"))
 alhaitham_key = str.lower(config.get("Settings", "alhaitham_party_key"))
 other_party_keys = json.loads(config.get("Settings", "other_party_keys"))
+other_party_keys = [x.lower() for x in other_party_keys]
 cons = int(config.get("Settings", "constellation"))
 game_name = config.get("Settings", "game_name")
 if cons >= 1: cd_e = 13
-
 
 def on_release(key):
     if getForegroundWindowTitle() == game_name:
@@ -51,13 +51,14 @@ def on_release(key):
             mirror_refreshed_time = time()
         elif k == burst_key and alhaitham_on_field and time() - cd_q_start > cd_q:
             cd_q_start = time()
-            mirror_refreshed_time = time()+3.5
+            mirror_refreshed_time = time() + 3.5
             if cons >= 6:
                 mirrors = 3
             else:
                 mirrors = 3 - mirrors
-        elif k in [x.lower() for x in other_party_keys] and alhaitham_on_field:
+        elif k in other_party_keys and alhaitham_on_field:
             mirrors = 0
+            alhaitham_on_field = False
 
 
 def on_click(x, y, button, pressed):
@@ -67,7 +68,6 @@ def on_click(x, y, button, pressed):
             left_button_start = time()
         else:
             held_for = time() - left_button_start
-            print(held_for)
             if held_for + ping / 1000 > 0.35:
                 if mirrors < 3: mirrors += 1
                 mirror_refreshed_time = time()
@@ -105,6 +105,10 @@ running = True
 pygame.init()
 size = (500, 50)
 screen = pygame.display.set_mode(size, pygame.RESIZABLE)
+clock = pygame.time.Clock()
+img = pygame.image.load('./alhaitham.jpg')
+pygame.display.set_caption("Alhaitham Mirror Counter");
+pygame.display.set_icon(img)
 while running:
     if getForegroundWindowTitle() != "Genshin Impact" and listener_mouse.is_alive(ml):
         listener_mouse.stop(ml)
@@ -117,7 +121,7 @@ while running:
             running = False
         elif event.type == pygame.VIDEORESIZE:
             size = event.size
-            screen = pygame.display.set_mode((size[0],50), pygame.RESIZABLE)
+            screen = pygame.display.set_mode((size[0], 50), pygame.RESIZABLE)
         # Clear the screen
     screen.fill((54, 59, 55, 0))
     text = text_generator()
@@ -125,6 +129,6 @@ while running:
     font = pygame.font.Font(None, int((size[0]) / 15))
     text_surface = font.render(text, True, (145, 171, 108))
     screen.blit(text_surface, (10, 10))
-
+    clock.tick(60)
     # Update the display
     pygame.display.flip()
