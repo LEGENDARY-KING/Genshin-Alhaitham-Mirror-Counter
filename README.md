@@ -2,6 +2,8 @@
 
 This is a Python project that counts the number of mirrors in the game Genshin Impact using keyboard and mouse input monitoring.
 
+[Showcase](https://www.youtube.com/shorts/u9sORrfLl1o)
+
 ## Getting Started - Release version
 
 1. Download the latest release from [GitHub](https://github.com/LEGENDARY-KING/Genshin-Alhaitham-Mirror-Counter/releases/).
