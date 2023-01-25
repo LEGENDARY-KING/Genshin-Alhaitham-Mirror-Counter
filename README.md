@@ -21,8 +21,8 @@ This is a Python project that counts the number of mirrors in the game Genshin I
     - To run the `setup.py` file, navigate to the project directory in the command line and run `python setup.py build` and then it will generate a build folder where you will be able to find an exe file that you need to also run as administrator
 
 
-If you want to use this over the genshin impact window then download 
-
+To make this tool always stay on top of Genshin Impact, you can use Microsoft PowerToys' Always On Top. Follow this guide on how to set it up: https://learn.microsoft.com/en-us/windows/powertoys
+ 
 ## Additional Information
 - This tool does not use image recognition, so the results may not be 100% accurate and may include mirrors generated when the character does not have enough energy, or when charged or plunge attacks do not actually hit any enemies.
 - Known Bugs:
