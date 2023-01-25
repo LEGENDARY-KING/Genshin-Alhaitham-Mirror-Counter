@@ -4,13 +4,13 @@ This is a Python project that counts the number of mirrors in the game Genshin I
 
 ## Getting Started - Release version
 
-1. Download the latest release from [GitHub](https://github.com/LEGENDARY-KING/Genshin-Alhaitham-Counter/releases/).
+1. Download the latest release from [GitHub](https://github.com/LEGENDARY-KING/Genshin-Alhaitham-Mirror-Counter/releases/).
 2. Check the config.ini file and edit it accordingly
 3. Run the program as an administrator. This is necessary as Genshin Impact must be run as an administrator and the program needs administrative privileges to monitor keyboard and mouse inputs.
 
 ## Getting Started - Manual version
 1. Download the source code by either cloning the repository using git or by downloading the source code as a zip file.
-    - To clone the repository, run the command `git clone https://github.com/LEGENDARY-KING/Genshin-Alhaitham-Counter.git`
+    - To clone the repository, run the command `git clone https://github.com/LEGENDARY-KING/Genshin-Alhaitham-Mirror-Counter.git`
     - To download the source code as a zip file, go to the GitHub page and click on "Clone or Download" and then "Download Zip"
 2. Ensure that you have Python and pip installed and updated.
 3. Run `pip install -r requirements.txt` to install all the required packages.
